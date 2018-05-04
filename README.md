@@ -1,9 +1,14 @@
 # golang 可多文件上传的request builder 库
 
-## 使用方法
-```go
+## 测试方法
 
-	fb := New()
+1. start php upload server: php -S 127.0.0.1:8080 ./
+2. run go test -v 
+
+## 使用方法
+
+```go
+	fb := gomf.New()
 	fb.WriteField("name", "accountName")
 	fb.WriteField("password", "pwd")
 	fb.WriteFile("picture", "icon.png", "image/jpeg", []byte(strings.Repeat("0", 100)))
@@ -29,5 +34,4 @@
 	}
 
 	log.Println(string(b))
-
 ```
